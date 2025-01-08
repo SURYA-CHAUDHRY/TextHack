@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TextHack/static/css/main.dc4d6ff2.css",
+    "main.js": "/TextHack/static/js/main.c538803f.js",
+    "static/js/488.5fccf777.chunk.js": "/TextHack/static/js/488.5fccf777.chunk.js",
+    "index.html": "/TextHack/index.html",
+    "main.dc4d6ff2.css.map": "/TextHack/static/css/main.dc4d6ff2.css.map",
+    "main.c538803f.js.map": "/TextHack/static/js/main.c538803f.js.map",
+    "488.5fccf777.chunk.js.map": "/TextHack/static/js/488.5fccf777.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc4d6ff2.css",
+    "static/js/main.c538803f.js"
+  ]
+}
