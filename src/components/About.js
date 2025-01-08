@@ -1,37 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
-
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white',
-        
-    })
-    const[btntext, setBtnText] = useState("Enable Dark Mode")
-
-    const toggleStyle =() =>{
-        if(myStyle.color === 'black'){
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '0.5 px solid white'
-            })
-            setBtnText("Enable Light Mode")
-        }
-        else{
-            setMyStyle({
-                color:'black',
-                backgroundColor: 'white'
-            })
-            setBtnText("Enable Dark Mode")
-        }
+export default function About(props) {
+    let myStyle = {
+        color: props.mode==='dark'? 'white': 'black',
+        backgroundColor: props.mode==='dark'? '#314449': 'white',
+        border: '2px solid',
+        borderColor: props.mode==='dark'? 'white': 'black'
     }
-    
   return (
-    <div className='container' style={myStyle}>
-        <h1 className='my-3'>About Us</h1>
+    <div className='container' style={{color: props.mode==='dark'? 'white': 'black'}}>
+        <h1 className='my-3' >About Us</h1>
         <div className="accordion" id="accordionExample">
-            <div className="accordion-item">
+            <div className="accordion-item" style={myStyle}>
                 <h2 className="accordion-header">
                 <button className="accordion-button" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <b>About TextHack</b>
@@ -43,7 +23,7 @@ export default function About() {
                 </div>
                 </div>
             </div>
-            <div className="accordion-item">
+            <div className="accordion-item" style={myStyle}>
                 <h2 className="accordion-header">
                 <button className="accordion-button collapsed" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <b>TextHack Functionalities</b>
@@ -61,7 +41,7 @@ export default function About() {
                 </div>
                 </div>
             </div>
-            <div className="accordion-item">
+            <div className="accordion-item" style={myStyle}>
                 <h2 className="accordion-header">
                 <button className="accordion-button collapsed" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     <b>Text Summary</b>
@@ -80,9 +60,6 @@ export default function About() {
                 </div>
                 </div>
             </div>
-        </div>
-        <div className="container my-3">
-            <button onClick={toggleStyle} type="button" className="btn btn-dark">{btntext}</button>
         </div>
     </div>
   )
